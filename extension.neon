@@ -42,6 +42,20 @@ services:
             - phpstan.broker.dynamicFunctionReturnTypeExtension
 
     -
+        class: Pest\PHPStan\Type\Pest\TestFunctionReturnTypeExtension
+        tags:
+            - phpstan.broker.dynamicFunctionReturnTypeExtension
+
+    -
+        class: Pest\PHPStan\Type\Pest\PestTestFunction
+
+    -
+        class: Pest\PHPStan\Type\Pest\TestFunctionProxyMethodExtension
+        tags:
+            - phpstan.broker.expressionTypeResolverExtension
+            - phpstan.ignoreErrorExtension
+
+    -
         class: Pest\PHPStan\Type\Pest\ExpectationMethodReturnTypeExtension
         tags:
             - phpstan.broker.dynamicMethodReturnTypeExtension
